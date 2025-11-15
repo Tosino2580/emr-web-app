@@ -49,11 +49,8 @@ export const menus = [
       { label: "Laboratory Management Software", icon: TestTube },
       { label: "Clinic/Polyclinic Management Software", icon: Stethoscope },
       { label: "ART Management Software", icon: Dna },
-<<<<<<< HEAD:src/data/menu.js
       // { label: "Dental Management Software", icon:  },
-=======
       { label: "Dental Management Software", icon: Smile },   // FIXED
->>>>>>> a72115d6353c1c0d16f8e3ebaaad2cc3bcf0e577:src/components/data/menus.js
     ],
   },
   {
