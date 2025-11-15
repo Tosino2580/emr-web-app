@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 17:13:33
+    * @created          : 15/11/2025 - 18:08:14
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -18,7 +18,7 @@ import {
   TestTube,
   Stethoscope,
   Dna,
-  Tooth,
+  Smile,            // Dental icon replacement
   Newspaper,
   FileText,
   ShieldCheck,
@@ -49,7 +49,7 @@ export const menus = [
       { label: "Laboratory Management Software", icon: TestTube },
       { label: "Clinic/Polyclinic Management Software", icon: Stethoscope },
       { label: "ART Management Software", icon: Dna },
-      { label: "Dental Management Software", icon: Tooth },
+      { label: "Dental Management Software", icon: Smile },   // FIXED
     ],
   },
   {

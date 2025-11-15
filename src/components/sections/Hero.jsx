@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 17:14:58
+    * @created          : 15/11/2025 - 18:56:48
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -10,18 +10,22 @@
     * - Author          : fortu
     * - Modification    : 
 **/
+import doctorImg from "../assets/images/doctor.png";
+
 export default function Hero() {
   return (
-    <section className="w-full h-screen flex items-center bg-white">
+    <section className="w-full min-h-[80vh] flex items-center bg-white py-16">
 
       {/* Left Image */}
-      <div className="w-1/2 h-full relative hidden md:block">
-        <img
-          src="/assets/images/doctor.png"
-          alt="Doctor"
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+      <div className="w-1/2 flex justify-center items-center hidden md:flex">
+        <div className="relative h-[420px] w-full max-w-[450px] rounded-3xl overflow-hidden shadow-md">
+          <img
+            src={doctorImg}
+            alt="Doctor"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
+        </div>
       </div>
 
       {/* Right Text */}
