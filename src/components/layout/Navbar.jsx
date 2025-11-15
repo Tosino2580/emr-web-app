@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 15:49:46
+    * @created          : 15/11/2025 - 17:36:26
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -30,16 +30,20 @@ export default function Navbar() {
   return (
     <nav
       className={`
-        w-full fixed top-0 left-0 z-50 transition-all
+        fixed top-0 left-0 z-50 w-full transition-all
         ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
       `}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
+        
         {/* Logo */}
-        <img src="/assets/images/logo.svg" alt="Logo" className="h-8" />
+        <img
+          src="/assets/images/logo.svg"
+          alt="Logo"
+          className="h-8"
+        />
 
-        {/* Desktop Mega Menu */}
+        {/* Desktop */}
         <DesktopMenu
           menus={menus}
           openMenu={openMenu}
@@ -48,15 +52,12 @@ export default function Navbar() {
         />
 
         {/* Mobile Toggle */}
-        <button
-          className="md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
+        <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X /> : <Menu />}
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile */}
       <MobileMenu menus={menus} mobileOpen={mobileOpen} />
     </nav>
   );
