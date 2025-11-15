@@ -1,5 +1,5 @@
 {
-  "name": "emr-project",
+  "name": "emr-web-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,12 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.17",
-    "firebase": "^12.6.0",
+    "lucide-react": "^0.553.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-icons": "^5.5.0",
-    "tailwindcss": "^4.1.17"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

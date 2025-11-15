@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 15:50:13
+    * @created          : 15/11/2025 - 17:14:13
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -20,7 +20,7 @@ export default function Dropdown({ menus, mobileOpen }) {
       {menus.map((menu, i) => (
         <details key={i} className="border rounded-lg p-3">
           <summary className="flex justify-between items-center cursor-pointer">
-            <span className="font-medium">{menu.title}</span>
+            <span className="font-medium text-gray-800">{menu.title}</span>
             <ChevronDown className="h-4 w-4" />
           </summary>
 

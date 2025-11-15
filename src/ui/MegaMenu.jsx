@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 15:50:03
+    * @created          : 15/11/2025 - 17:14:03
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -15,7 +15,6 @@ import { ChevronDown } from "lucide-react";
 export default function MegaMenu({ menus, openMenu, setOpenMenu, scrolled }) {
   return (
     <div className="hidden md:flex items-center space-x-8">
-
       {menus.map((menu, i) => (
         <div
           key={i}
@@ -41,10 +40,10 @@ export default function MegaMenu({ menus, openMenu, setOpenMenu, scrolled }) {
                   return (
                     <div
                       key={j}
-                      className="flex items-center space-x-3 cursor-pointer rounded-lg p-3 hover:bg-gray-50 transition-colors"
+                      className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
                     >
                       <Icon className="h-4 w-4 text-[#009688]" />
-                      <span className="text-sm">{item.label}</span>
+                      <span className="text-sm text-gray-700">{item.label}</span>
                     </div>
                   );
                 })}
@@ -54,7 +53,6 @@ export default function MegaMenu({ menus, openMenu, setOpenMenu, scrolled }) {
         </div>
       ))}
 
-      {/* CTA */}
       <button className="rounded-md bg-[#009688] px-4 py-2 text-sm font-semibold text-white hover:bg-[#00796B] transition">
         Book a Demo
       </button>
