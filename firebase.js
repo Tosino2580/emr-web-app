@@ -1,3 +1,15 @@
+/**
+    * @description      : 
+    * @author           : fortu
+    * @group            : 
+    * @created          : 15/11/2025 - 13:41:37
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 15/11/2025
+    * - Author          : fortu
+    * - Modification    : 
+**/
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
