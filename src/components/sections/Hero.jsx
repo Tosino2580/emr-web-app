@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 18:56:48
+    * @created          : 15/11/2025 - 19:04:04
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -10,7 +10,7 @@
     * - Author          : fortu
     * - Modification    : 
 **/
-import doctorImg from "../assets/images/doctor.png";
+import doctorImg from "../../assets/images/Doc.png";
 
 export default function Hero() {
   return (
@@ -26,17 +26,6 @@ export default function Hero() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
         </div>
-      </div>
-      <div className="w-1/2 h-full relative hidden md:block">
-        <img
-          src="/assets/images/doctor.png"
-          alt="Doctor"
-          className="h-full w-full object-cover"
-        />
-
-        {/* Soft gradient overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
       </div>
 
       {/* Right Text */}
