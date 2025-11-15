@@ -23,7 +23,7 @@ export default function Hero() {
         />
 
         {/* Soft gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
       </div>
 
       {/* Right — Text */}
