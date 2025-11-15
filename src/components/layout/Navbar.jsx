@@ -16,6 +16,17 @@ import MobileMenu from "../ui/Dropdown";
 import LoginMenu from "../ui/LoginMenu";
 import { menus } from "../../data/menus";
 import { Menu, X, ChevronDown } from "lucide-react";
+/**
+ * Navbar
+ * Fixed-position, transparent → solid on scroll
+ * Desktop mega-menu + mobile dropdown
+ */
+
+// import { useState, useEffect } from "react";
+// import DesktopMenu from "../../ui/MegaMenu.jsx"
+// import MobileMenu from "../../ui/Dropdown.jsx";
+// import { menus } from "../../data/menu.js";
+// import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
