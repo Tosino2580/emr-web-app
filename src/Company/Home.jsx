@@ -1,11 +1,25 @@
-import React from 'react';
+/**
+    * @description      : 
+    * @author           : fortu
+    * @group            : 
+    * @created          : 15/11/2025 - 15:50:37
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 15/11/2025
+    * - Author          : fortu
+    * - Modification    : 
+**/
+import Navbar from "../components/layout/Navbar";
+import Hero from "../sections/Hero";
+import Footer from "../components/layout/Footer";
 
-function Home() {
+export default function Home() {
   return (
-    <div>
-      Home
-    </div>
+    <>
+      <Navbar />
+      <Hero />
+      <Footer />
+    </>
   );
 }
-
-export default Home;
