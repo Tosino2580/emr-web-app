@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 19:12:14
+    * @created          : 15/11/2025 - 19:35:01
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -14,19 +14,8 @@ import { useState } from "react";
 import DesktopMenu from "../ui/MegaMenu";
 import MobileMenu from "../ui/Dropdown";
 import LoginMenu from "../ui/LoginMenu";
-import { menus } from "../../data/menus";
+import { menus } from "../data/menus";
 import { Menu, X, ChevronDown } from "lucide-react";
-/**
- * Navbar
- * Fixed-position, transparent → solid on scroll
- * Desktop mega-menu + mobile dropdown
- */
-
-// import { useState, useEffect } from "react";
-// import DesktopMenu from "../../ui/MegaMenu.jsx"
-// import MobileMenu from "../../ui/Dropdown.jsx";
-// import { menus } from "../../data/menu.js";
-// import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -38,28 +27,20 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         
         {/* Logo */}
-        <img
-          src="/assets/images/logo.svg"
-          alt="Logo"
-          className="h-8"
-        />
+        <img src="/assets/images/logo.svg" alt="Logo" className="h-8" />
 
         {/* Desktop Menu */}
-        <DesktopMenu
-          menus={menus}
-          openMenu={openMenu}
-          setOpenMenu={setOpenMenu}
-        />
+        <DesktopMenu menus={menus} openMenu={openMenu} setOpenMenu={setOpenMenu} />
 
-        {/* Desktop Login */}
+        {/* Login */}
         <div
           className="relative hidden md:block"
           onMouseEnter={() => setOpenLogin(true)}
           onMouseLeave={() => setOpenLogin(false)}
         >
-          <button className="flex items-center space-x-1 text-sm font-medium text-gray-800">
+          <button className="flex items-center space-x-1 text-sm font-semibold text-gray-800">
             <span>Login</span>
-            <ChevronDown className="h-4 w-4" />
+            <ChevronDown className="h-5 w-5" strokeWidth={2.3} />
           </button>
 
           <LoginMenu openLogin={openLogin} setOpenLogin={setOpenLogin} />
@@ -71,7 +52,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <MobileMenu menus={menus} mobileOpen={mobileOpen} />
     </nav>
   );

@@ -41,7 +41,7 @@ export default function Hero() {
 
         <div className="mt-8 flex space-x-4">
           <button className="bg-[#009688] text-white px-6 py-3 rounded-md hover:bg-[#00796B] transition">
-            Book a Demo
+            Get Started
           </button>
           <button className="border border-gray-300 px-6 py-3 rounded-md">
             Contact Us

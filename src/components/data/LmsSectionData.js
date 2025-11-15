@@ -1,3 +1,15 @@
+/**
+    * @description      : 
+    * @author           : fortu
+    * @group            : 
+    * @created          : 15/11/2025 - 19:27:00
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 15/11/2025
+    * - Author          : fortu
+    * - Modification    : 
+**/
 import img1 from "/src/assets/images/unmatched.webp";
 import img2 from "/src/assets/images/unrivaled.webp";
 import img3 from "/src/assets/images/unwavering.webp";
