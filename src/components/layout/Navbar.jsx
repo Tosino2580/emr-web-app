@@ -11,9 +11,9 @@
     * - Modification    : 
 **/
 import { useState, useEffect } from "react";
-import DesktopMenu from "../ui/MegaMenu";
-import MobileMenu from "../ui/Dropdown";
-import { menus } from "../../data/menus";
+import DesktopMenu from "../../ui/MegaMenu.jsx"
+import MobileMenu from "../../ui/Dropdown.jsx";
+import { menus } from "../../data/menu.js";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {

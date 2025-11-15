@@ -18,7 +18,6 @@ import {
   TestTube,
   Stethoscope,
   Dna,
-  Tooth,
   Newspaper,
   FileText,
   ShieldCheck,
@@ -49,7 +48,7 @@ export const menus = [
       { label: "Laboratory Management Software", icon: TestTube },
       { label: "Clinic/Polyclinic Management Software", icon: Stethoscope },
       { label: "ART Management Software", icon: Dna },
-      { label: "Dental Management Software", icon: Tooth },
+      // { label: "Dental Management Software", icon:  },
     ],
   },
   {
