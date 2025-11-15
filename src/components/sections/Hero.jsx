@@ -27,6 +27,17 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
         </div>
       </div>
+      <div className="w-1/2 h-full relative hidden md:block">
+        <img
+          src="/assets/images/doctor.png"
+          alt="Doctor"
+          className="h-full w-full object-cover"
+        />
+
+        {/* Soft gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
+      </div>
 
       {/* Right Text */}
       <div className="w-full md:w-1/2 px-8 md:px-16">
