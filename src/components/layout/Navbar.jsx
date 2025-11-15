@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 17:36:26
+    * @created          : 15/11/2025 - 18:35:48
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -10,6 +10,12 @@
     * - Author          : fortu
     * - Modification    : 
 **/
+/**
+ * Navbar
+ * Fixed-position, transparent → solid on scroll
+ * Desktop mega-menu + mobile dropdown
+ */
+
 import { useState, useEffect } from "react";
 import DesktopMenu from "../../ui/MegaMenu.jsx"
 import MobileMenu from "../../ui/Dropdown.jsx";
@@ -57,7 +63,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile */}
+      {/* Mobile Menu */}
       <MobileMenu menus={menus} mobileOpen={mobileOpen} />
     </nav>
   );

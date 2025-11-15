@@ -1,7 +1,19 @@
+/**
+    * @description      : 
+    * @author           : fortu
+    * @group            : 
+    * @created          : 15/11/2025 - 18:04:58
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 15/11/2025
+    * - Author          : fortu
+    * - Modification    : 
+**/
 import React from 'react';
 import { FaChevronRight } from 'react-icons/fa6';
-import ButtonGetStarted from '../../ui/ButtonGetStarted';
-import ButtonContactUs from '../../ui/ButtonContactUs';
+import ButtonGetStarted from '../ui/ButtonGetStarted';
+import ButtonContactUs from '../ui/ButtonContactUs';
 import LabImage from "../../assets/images/lab-management-system.webp";
 import LmsSection1 from './LmsSection1';
 function Lms() {
