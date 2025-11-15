@@ -21,13 +21,10 @@ export default function Hero() {
           alt="Doctor"
           className="h-full w-full object-cover"
         />
-<<<<<<< HEAD:src/sections/Hero.jsx
 
         {/* Soft gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
-=======
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
->>>>>>> 24ce33324b66525fe473d3ebce95ecb5e8f194a6:src/components/sections/Hero.jsx
+        <div className="absolute inset-0 bg-linear-to-r from-black/20 to-transparent" />
       </div>
 
       {/* Right Text */}
