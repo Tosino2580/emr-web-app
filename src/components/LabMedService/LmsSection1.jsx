@@ -1,5 +1,5 @@
 import React from 'react';
-import { LmsSectionData } from './data/LmsSectionData';
+import { LmsSectionData } from '../data/LmsSectionData';
 
 function LmsSection1() {
   return (

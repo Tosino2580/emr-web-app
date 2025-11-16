@@ -2,16 +2,18 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 15/11/2025 - 17:15:11
+    * @created          : 16/11/2025 - 14:47:22
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
-    * - Date            : 15/11/2025
+    * - Date            : 16/11/2025
     * - Author          : fortu
     * - Modification    : 
 **/
+
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/sections/Hero";
+import Services from "../components/sections/Services";
 import Footer from "../components/layout/Footer";
 
 export default function Home() {
@@ -19,6 +21,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <Services />
       <Footer />
     </>
   );

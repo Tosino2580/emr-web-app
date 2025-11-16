@@ -1,27 +1,42 @@
+/**
+    * @description      : 
+    * @author           : fortu
+    * @group            : 
+    * @created          : 16/11/2025 - 02:05:22
+    * 
+    * MODIFICATION LOG
+    * - Version         : 1.0.0
+    * - Date            : 16/11/2025
+    * - Author          : fortu
+    * - Modification    : 
+**/
 import { LogIn, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-export default function LoginMenu({ openLogin, setOpenLogin }) {
+export default function LoginMenu({ openLogin }) {
   return (
-    <div
-      className={`
-        absolute right-0 top-full mt-3 z-30 w-48 bg-white 
-        rounded-xl shadow-lg ring-1 ring-black/5 backdrop-blur-sm
-        ${openLogin ? "block" : "hidden"}
-      `}
-      onMouseEnter={() => setOpenLogin(true)}
-      onMouseLeave={() => setOpenLogin(false)}
-    >
-      <div className="flex flex-col py-2">
-        <a className="flex items-center px-4 py-2 space-x-3 hover:bg-gray-50 cursor-pointer">
-          <LogIn className="h-4 w-4 text-[#009688]" />
-          <span className="text-sm text-gray-700">User Login</span>
-        </a>
+    <AnimatePresence>
+      {openLogin && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.18 }}
+          className="absolute right-0 top-full mt-3 z-50 w-52 bg-white rounded-xl shadow-xl ring-1 ring-black/5 backdrop-blur-sm py-2"
+        >
+          <div className="flex flex-col">
+            <div className="flex items-center px-4 py-2 space-x-3 cursor-pointer hover:bg-gray-50 hover:text-[#009688] transition-all">
+              <LogIn className="h-5 w-5" strokeWidth={2.6} />
+              <span className="text-sm font-semibold">User Login</span>
+            </div>
 
-        <a className="flex items-center px-4 py-2 space-x-3 hover:bg-gray-50 cursor-pointer">
-          <User className="h-4 w-4 text-[#009688]" />
-          <span className="text-sm text-gray-700">Patient Login</span>
-        </a>
-      </div>
-    </div>
+            <div className="flex items-center px-4 py-2 space-x-3 cursor-pointer hover:bg-gray-50 hover:text-[#009688] transition-all">
+              <User className="h-5 w-5" strokeWidth={2.6} />
+              <span className="text-sm font-semibold">Patient Login</span>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

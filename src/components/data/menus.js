@@ -16,9 +16,6 @@ import {
   FlaskConical,
   Eye,
   TestTube,
-  Stethoscope,
-  Dna,
-  Smile,            // Dental icon replacement
   Newspaper,
   FileText,
   ShieldCheck,
@@ -45,20 +42,7 @@ export const menus = [
       { label: "Hospital Management Software", icon: Hospital },
       { label: "Pharmacy Management Software", icon: Pill },
       { label: "Environmental Laboratory Management Software", icon: FlaskConical },
-      { label: "Ophthalmology Management Software", icon: Eye },
       { label: "Laboratory Management Software", icon: TestTube },
-      { label: "Clinic/Polyclinic Management Software", icon: Stethoscope },
-      { label: "ART Management Software", icon: Dna },
-      // { label: "Dental Management Software", icon:  },
-      { label: "Dental Management Software", icon: Smile },   // FIXED
-    ],
-  },
-  {
-    title: "Resources",
-    items: [
-      { label: "Blogs", icon: Newspaper },
-      { label: "Brochure", icon: FileText },
-      { label: "NABH", icon: ShieldCheck },
     ],
   },
   {
