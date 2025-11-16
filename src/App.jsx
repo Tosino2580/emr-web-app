@@ -11,11 +11,13 @@
     * - Modification    : 
 **/
 import Home from "./Company/Home";
+import Lms from "./components/LabMedService/Lms";
 
 function App() {
   return(
     <>
-      <Home />
+      {/* <Home /> */}
+      <Lms/>
     </>
   )
 

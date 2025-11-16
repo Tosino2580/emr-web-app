@@ -14,7 +14,7 @@ import { useState } from "react";
 import DesktopMenu from "../ui/MegaMenu";
 import MobileMenu from "../ui/Dropdown";
 import LoginMenu from "../ui/LoginMenu";
-import { menus } from "../../data/menus";
+import { menus } from "../data/menus";
 import { Menu, X, ChevronDown } from "lucide-react";
 /**
  * Navbar
