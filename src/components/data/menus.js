@@ -42,16 +42,7 @@ export const menus = [
       { label: "Hospital Management Software", icon: Hospital },
       { label: "Pharmacy Management Software", icon: Pill },
       { label: "Environmental Laboratory Management Software", icon: FlaskConical },
-      { label: "Ophthalmology Management Software", icon: Eye },
       { label: "Laboratory Management Software", icon: TestTube },
-    ],
-  },
-  {
-    title: "Resources",
-    items: [
-      { label: "Blogs", icon: Newspaper },
-      { label: "Brochure", icon: FileText },
-      { label: "NABH", icon: ShieldCheck },
     ],
   },
   {
