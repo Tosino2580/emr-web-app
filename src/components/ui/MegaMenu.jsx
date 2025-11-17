@@ -11,13 +11,14 @@
     * - Modification    : 
 **/
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MegaMenu({
   menus,
   openMenu,
   setOpenMenu,
-  scrolled,
   textSize = "text-[16px]",
   textWeight = "font-bold",
   iconSize = 20,
@@ -61,7 +62,8 @@ export default function MegaMenu({
                 {menu.items.map((item, j) => {
                   const Icon = item.icon;
                   return (
-                    <div
+                    <Link
+                      to={item.path || "#"}
                       key={j}
                       className="flex items-center space-x-3 px-3 py-2 rounded-lg cursor-pointer transition-all hover:text-[#009688] hover:bg-gray-50"
                     >
@@ -72,7 +74,7 @@ export default function MegaMenu({
                         />
                       ) : null}
                       <span className="text-[15px] font-semibold">{item.label}</span>
-                    </div>
+                    </Link>
                   );
                 })}
               </motion.div>

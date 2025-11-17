@@ -42,7 +42,7 @@ export const menus = [
       { label: "Hospital Management Software", icon: Hospital },
       { label: "Pharmacy Management Software", icon: Pill },
       { label: "Environmental Laboratory Management Software", icon: FlaskConical },
-      { label: "Laboratory Management Software", icon: TestTube },
+      { label: "Laboratory Management Software", icon: TestTube, path: "/lab-med-service" },
     ],
   },
   {

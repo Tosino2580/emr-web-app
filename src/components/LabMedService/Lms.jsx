@@ -16,13 +16,16 @@ import ButtonGetStarted from '../ui/ButtonGetStarted';
 import ButtonContactUs from '../ui/ButtonContactUs';
 import LabImage from "../../assets/images/lab-management-system.webp";
 import LmsSection1 from './LmsSection1';
+import Navbar from '../layout/Navbar';
+import { Link } from 'react-router-dom';
 function Lms() {
   return (
     <div>
-      <div className='bg-red-50 flex items-center gap-1 h-14'>
-        <h1 className='text-xl text-[#009688]'>Home</h1>
-        <FaChevronRight className='text-[#009688] mt-1' />
-        <h1 className='ml-5 text-xl'>LMS</h1>
+      <Navbar/>
+      <div className='bg-[#079789] flex items-center gap-1 h-14 mt-18 px-20'>
+        <Link to="/"><h1 className='text-xl text-white'>Home</h1></Link>
+        <FaChevronRight className='text-white mt-1' />
+        <h1 className='ml-5 text-xl text-white'>LMS</h1>
       </div>
       <div className='flex flex-col md:flex-row  items-center px-4 md:px-20'>
         <div className=''>

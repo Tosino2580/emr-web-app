@@ -31,11 +31,11 @@ export const LmsSectionData = [
     {
         image: img3,
         title: "Unwavering Accuracy",
-        desc: " Ensure data integrity and reliable results with advanced validation features and stringent compliance tools."
+        desc: " Ensure data integrity and reliable results with advanced validation features and stringent  tools."
     },
     {
         image: img4,
         title: "Unbreakable Trust",
-        desc: " Join the Global Network of Labs Entrusting N-Doc Laboratory & Pathology Solutions for Critical Sample Management."
+        desc: " Join the Global Network of Labs Entrusting N-Doc Laboratory  Solutions for Critical Sample Management."
     },
 ]
