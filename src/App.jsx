@@ -10,12 +10,19 @@
     * - Author          : fortu
     * - Modification    : 
 **/
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Company/Home";
+import Lms from "./components/LabMedService/Lms";
 
 function App() {
-  return(
+  return (
     <>
-      <Home />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/lab-med-service" element={<Lms />} /> 
+        </Routes>
+      </Router>
     </>
   )
 

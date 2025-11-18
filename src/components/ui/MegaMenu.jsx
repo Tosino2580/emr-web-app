@@ -16,12 +16,18 @@
  */
 
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MegaMenu({
   menus,
   openMenu,
   setOpenMenu,
+  scrolled,
+  textSize = "text-[16px]",
+  textWeight = "font-bold",
+  iconSize = 20,
 }) {
   return (
     <div className="hidden md:flex items-center gap-10">
@@ -70,7 +76,7 @@ export default function MegaMenu({
                   const Icon = item.icon;
 
                   return (
-                    <motion.div
+                    <div
                       key={j}
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -88,12 +94,9 @@ export default function MegaMenu({
                           size={18}
                           strokeWidth={2.3}
                         />
-                      )}
-
-                      <span className="text-sm font-semibold text-gray-800">
-                        {item.label}
-                      </span>
-                    </motion.div>
+                      ) : null}
+                      <span className="text-[15px] font-semibold">{item.label}</span>
+                    </div>
                   );
                 })}
               </motion.div>
