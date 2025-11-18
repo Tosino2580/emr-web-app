@@ -46,18 +46,6 @@ export const menus = [
     ],
   },
   {
-    title: "Integrations",
-    items: [
-      { label: "Aasandha", icon: Network },
-      { label: "ABDM", icon: Globe },
-      { label: "CDSS", icon: BrainCog },
-      { label: "External Integration", icon: Plug },
-      { label: "Machine Integration", icon: ServerCog },
-      { label: "NPHIES Integration", icon: ScanBarcode },
-      { label: "VMS Integration", icon: Users },
-    ],
-  },
-  {
     title: "Company",
     items: [
       { label: "About Us", icon: Info },

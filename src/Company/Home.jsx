@@ -14,6 +14,7 @@
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/sections/Hero";
 import Services from "../components/sections/Services";
+import Features from "../components/sections/Features";
 import Footer from "../components/layout/Footer";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+      <Features />
       <Footer />
     </>
   );

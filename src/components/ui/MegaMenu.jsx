@@ -2,14 +2,19 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 16/11/2025 - 02:05:09
+    * @created          : 17/11/2025 - 09:32:24
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
-    * - Date            : 16/11/2025
+    * - Date            : 17/11/2025
     * - Author          : fortu
     * - Modification    : 
 **/
+/**
+ * MegaMenu — fixed color version
+ * Always visible, no white text, no scroll dependency
+ */
+
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -17,13 +22,9 @@ export default function MegaMenu({
   menus,
   openMenu,
   setOpenMenu,
-  scrolled,
-  textSize = "text-[16px]",
-  textWeight = "font-bold",
-  iconSize = 20,
 }) {
   return (
-    <div className="hidden md:flex items-center space-x-10">
+    <div className="hidden md:flex items-center gap-10">
       {menus.map((menu, i) => (
         <div
           key={i}
@@ -31,53 +32,74 @@ export default function MegaMenu({
           onMouseEnter={() => setOpenMenu(menu.title)}
           onMouseLeave={() => setOpenMenu(null)}
         >
-          {/* TOP-LEVEL BUTTON */}
+          {/* TOP BUTTON */}
           <button
-            className={`
-              flex items-center space-x-1 transition-all
-              ${textSize} ${textWeight} text-gray-900
-            `}
-            aria-haspopup="true"
-            aria-expanded={openMenu === menu.title}
+            className="
+              flex items-center gap-1
+              text-[17px] font-bold 
+              text-gray-800 hover:text-emerald-700
+              transition-colors
+            "
           >
-            <span>{menu.title}</span>
+            {menu.title}
+
             <ChevronDown
-              className="transition-all"
-              style={{ width: iconSize, height: iconSize }}
-              strokeWidth={2.6}
+              size={18}
+              className={`
+                transition-transform duration-200 text-gray-800
+                ${openMenu === menu.title ? "rotate-180" : "rotate-0"}
+              `}
             />
           </button>
 
-          {/* Animated Dropdown (AnimatePresence + motion) */}
+          {/* DROPDOWN */}
           <AnimatePresence>
             {openMenu === menu.title && (
               <motion.div
-                initial={{ opacity: 0, y: -6 }}
+                initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.16 }}
-                className="absolute left-0 top-full mt-3 w-72 p-3 rounded-2xl bg-white shadow-xl ring-1 ring-black/5 z-40 pointer-events-auto"
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.18 }}
+                className="
+                  absolute left-0 top-full mt-3 z-40
+                  w-[320px] bg-white rounded-xl shadow-xl
+                  ring-1 ring-black/5 p-3
+                "
               >
                 {menu.items.map((item, j) => {
                   const Icon = item.icon;
+
                   return (
-                    <div
+                    <motion.div
                       key={j}
-                      className="flex items-center space-x-3 px-3 py-2 rounded-lg cursor-pointer transition-all hover:text-[#009688] hover:bg-gray-50"
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: j * 0.06 }}
+                      className="
+                        flex items-center gap-3 p-3
+                        rounded-md cursor-pointer
+                        hover:bg-emerald-50 hover:text-emerald-700
+                        transition-all
+                      "
                     >
-                      {Icon ? (
+                      {Icon && (
                         <Icon
-                          style={{ width: iconSize - 4, height: iconSize - 4 }}
-                          strokeWidth={2.4}
+                          className="text-emerald-600"
+                          size={18}
+                          strokeWidth={2.3}
                         />
-                      ) : null}
-                      <span className="text-[15px] font-semibold">{item.label}</span>
-                    </div>
+                      )}
+
+                      <span className="text-sm font-semibold text-gray-800">
+                        {item.label}
+                      </span>
+                    </motion.div>
                   );
                 })}
               </motion.div>
             )}
           </AnimatePresence>
+
         </div>
       ))}
     </div>

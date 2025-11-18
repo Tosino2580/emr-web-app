@@ -2,23 +2,43 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 16/11/2025 - 13:37:49
+    * @created          : 17/11/2025 - 08:09:09
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
-    * - Date            : 16/11/2025
+    * - Date            : 17/11/2025
     * - Author          : fortu
     * - Modification    : 
 **/
 /**
- * Hero Section — updated max-width now uses Container (max-w-6xl)
+ * Hero Section — with Framer Motion animated buttons
  */
 
+import { motion } from "framer-motion";
 import ECG from "../../components/ui/ECG";
 import doctorImg from "../../assets/images/Doc.png";
 import Container from "../layout/Container";
 
 export default function Hero() {
+  const scrollToElement = (selectorOrId) => {
+    const el =
+      document.getElementById(selectorOrId) ||
+      document.querySelector(selectorOrId);
+
+    if (!el) return;
+
+    const nav = document.querySelector("nav");
+    const navHeight = nav ? nav.getBoundingClientRect().height : 0;
+
+    const top =
+      el.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  const onGetStarted = () => scrollToElement("services");
+  const onContact = () => scrollToElement("contact");
+
   return (
     <section className="w-full bg-white pt-28 pb-20">
       <Container className="min-h-[85vh] flex items-center">
@@ -28,7 +48,6 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl font-bold leading-tight text-[#0F172A]">
             Modern <span className="text-[#009688]">Digital Healthcare</span>
             <br />
-
             <span className="flex items-center gap-3 flex-wrap">
               Solutions for Clinics & Hospitals
               <ECG />
@@ -40,13 +59,31 @@ export default function Hero() {
             software solutions.
           </p>
 
+          {/* BUTTONS (Framer Motion) */}
           <div className="mt-8 flex space-x-4">
-            <button className="bg-[#009688] text-white px-6 py-3 rounded-md hover:bg-[#00796B] transition">
-              Book a Demo
-            </button>
-            <button className="border border-gray-300 px-6 py-3 rounded-md">
+
+            {/* GET STARTED */}
+            <motion.button
+              onClick={onGetStarted}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 180, damping: 14 }}
+              className="cursor-pointer bg-[#009688] text-white px-6 py-3 rounded-md shadow-md"
+            >
+              Get Started
+            </motion.button>
+
+            {/* CONTACT */}
+            <motion.button
+              onClick={onContact}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 180, damping: 14 }}
+              className="cursor-pointer border border-gray-300 px-6 py-3 rounded-md shadow-sm bg-white"
+            >
               Contact Us
-            </button>
+            </motion.button>
+
           </div>
         </div>
 
