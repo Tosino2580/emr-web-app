@@ -24,10 +24,12 @@ export default function MegaMenu({
   menus,
   openMenu,
   setOpenMenu,
-  scrolled,
+<<<<<<< HEAD
+=======
   textSize = "text-[16px]",
   textWeight = "font-bold",
   iconSize = 20,
+>>>>>>> 567c915fe2af9e6e169815f34f5554078e2af767
 }) {
   return (
     <div className="hidden md:flex items-center gap-10">
@@ -76,7 +78,12 @@ export default function MegaMenu({
                   const Icon = item.icon;
 
                   return (
-                    <div
+<<<<<<< HEAD
+                    <motion.div
+=======
+                    <Link
+                      to={item.path || "#"}
+>>>>>>> 567c915fe2af9e6e169815f34f5554078e2af767
                       key={j}
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -94,9 +101,18 @@ export default function MegaMenu({
                           size={18}
                           strokeWidth={2.3}
                         />
+<<<<<<< HEAD
+                      )}
+
+                      <span className="text-sm font-semibold text-gray-800">
+                        {item.label}
+                      </span>
+                    </motion.div>
+=======
                       ) : null}
                       <span className="text-[15px] font-semibold">{item.label}</span>
-                    </div>
+                    </Link>
+>>>>>>> 567c915fe2af9e6e169815f34f5554078e2af767
                   );
                 })}
               </motion.div>
