@@ -2,14 +2,19 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 16/11/2025 - 02:24:07
+    * @created          : 18/11/2025 - 12:34:57
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
-    * - Date            : 16/11/2025
+    * - Date            : 18/11/2025
     * - Author          : fortu
     * - Modification    : 
 **/
+/**
+ * Navbar — glass on load, light-grey solid on scroll
+ * Includes animated Get Started button (Framer Motion)
+ */
+
 import { useState, useEffect } from "react";
 import DesktopMenu from "../ui/MegaMenu";
 import MobileMenu from "../ui/Dropdown";
@@ -17,6 +22,8 @@ import LoginMenu from "../ui/LoginMenu";
 import Container from "./Container";
 import { menus } from "../data/menus";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
+import logo from "../../assets/images/logo.jpg";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -24,14 +31,14 @@ export default function Navbar() {
   const [loginOpen, setLoginOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Nav shadow + solid background on scroll
+  // Detect scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Click outside to close dropdown
+  // Close login dropdown when clicking outside
   useEffect(() => {
     const handleClick = (e) => {
       if (!e.target.closest(".login-wrapper")) setLoginOpen(false);
@@ -43,50 +50,88 @@ export default function Navbar() {
   return (
     <nav
       className={`
-        fixed top-0 left-0 w-full z-50 transition-all
-        ${scrolled ? "bg-white shadow-lg" : "bg-transparent shadow-lg"}
+        fixed top-0 left-0 w-full z-50 
+        transition-all duration-300
+        ${scrolled 
+          ? "bg-gray-100 shadow-lg" 
+          : "bg-gray-100/70 backdrop-blur-xl shadow-lg"
+        }
       `}
     >
       <Container className="py-4 flex items-center justify-between">
 
         {/* LOGO */}
-        <img src="/assets/images/logo.svg" alt="Logo" className="h-10" />
+        <img 
+          src={logo}
+          alt="Logo"
+          className="h-10 select-none"
+        />
 
-        {/* CENTER NAV ITEMS */}
+        {/* CENTER NAV */}
         <div className="hidden md:flex flex-1 justify-center">
           <DesktopMenu
             menus={menus}
             openMenu={openMenu}
             setOpenMenu={setOpenMenu}
-            scrolled={scrolled}
-            textSize="text-[16px]"
-            textWeight="font-bold"
-            iconSize={20}
           />
         </div>
 
-        {/* RIGHT — LOGIN (NO PAGE SHIFT) */}
-        <div className="hidden md:flex items-center justify-end min-w-[160px]">
+        {/* RIGHT SIDE */}
+        <div className="hidden md:flex items-center gap-6">
+
+          {/* 🔥 GET STARTED BUTTON (Framer Motion) */}
+          <motion.button
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 260, damping: 18 }}
+            className="
+              px-5 py-2.5 rounded-md
+              bg-emerald-600 text-white
+              font-semibold text-[15px]
+              shadow-sm hover:bg-teal-700
+              transition-colors cursor-pointer
+            "
+          >
+            Get Started
+          </motion.button>
+
+          {/* LOGIN DROPDOWN */}
           <div className="relative login-wrapper">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 setLoginOpen(!loginOpen);
               }}
-              className="flex items-center space-x-1 text-[16px] font-bold text-gray-900"
+              className="
+                flex items-center gap-x-1 
+                text-[17px] font-bold 
+                text-gray-900 cursor-pointer
+              "
             >
               <span>Login</span>
-              <ChevronDown className="w-[20px] h-[20px]" strokeWidth={2.6} />
+
+              <ChevronDown
+                className={`
+                  w-5 h-5 transition-transform duration-200
+                  ${loginOpen ? "rotate-180" : "rotate-0"}
+                `}
+                strokeWidth={2.6}
+              />
             </button>
 
-            <LoginMenu openLogin={loginOpen} />
+            <LoginMenu openLogin={loginOpen} setOpenLogin={setLoginOpen} />
           </div>
+
         </div>
 
-        {/* MOBILE TOGGLE */}
-        <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
+        {/* MOBILE MENU BUTTON */}
+        <button 
+          className="md:hidden p-2"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
           {mobileOpen ? <X /> : <Menu />}
         </button>
+
       </Container>
 
       {/* MOBILE MENU */}
