@@ -2,11 +2,11 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 17/11/2025 - 09:32:24
+    * @created          : 18/11/2025 - 13:49:44
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
-    * - Date            : 17/11/2025
+    * - Date            : 18/11/2025
     * - Author          : fortu
     * - Modification    : 
 **/
@@ -17,19 +17,15 @@
 
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MegaMenu({
   menus,
   openMenu,
   setOpenMenu,
-<<<<<<< HEAD
-=======
   textSize = "text-[16px]",
   textWeight = "font-bold",
   iconSize = 20,
->>>>>>> 567c915fe2af9e6e169815f34f5554078e2af767
 }) {
   return (
     <div className="hidden md:flex items-center gap-10">
@@ -42,12 +38,12 @@ export default function MegaMenu({
         >
           {/* TOP BUTTON */}
           <button
-            className="
+            className={`
               flex items-center gap-1
-              text-[17px] font-bold 
+              ${textSize} ${textWeight}
               text-gray-800 hover:text-emerald-700
               transition-colors
-            "
+            `}
           >
             {menu.title}
 
@@ -78,47 +74,39 @@ export default function MegaMenu({
                   const Icon = item.icon;
 
                   return (
-<<<<<<< HEAD
                     <motion.div
-=======
-                    <Link
-                      to={item.path || "#"}
->>>>>>> 567c915fe2af9e6e169815f34f5554078e2af767
                       key={j}
                       initial={{ opacity: 0, x: -8 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: j * 0.06 }}
-                      className="
-                        flex items-center gap-3 p-3
-                        rounded-md cursor-pointer
-                        hover:bg-emerald-50 hover:text-emerald-700
-                        transition-all
-                      "
                     >
-                      {Icon && (
-                        <Icon
-                          className="text-emerald-600"
-                          size={18}
-                          strokeWidth={2.3}
-                        />
-<<<<<<< HEAD
-                      )}
+                      <Link
+                        to={item.path || "#"}
+                        className="
+                          flex items-center gap-3 p-3
+                          rounded-md cursor-pointer
+                          hover:bg-emerald-50 hover:text-emerald-700
+                          transition-all
+                        "
+                      >
+                        {Icon && (
+                          <Icon
+                            className="text-emerald-600"
+                            size={iconSize}
+                            strokeWidth={2.3}
+                          />
+                        )}
 
-                      <span className="text-sm font-semibold text-gray-800">
-                        {item.label}
-                      </span>
+                        <span className="text-[15px] font-semibold text-gray-800">
+                          {item.label}
+                        </span>
+                      </Link>
                     </motion.div>
-=======
-                      ) : null}
-                      <span className="text-[15px] font-semibold">{item.label}</span>
-                    </Link>
->>>>>>> 567c915fe2af9e6e169815f34f5554078e2af767
                   );
                 })}
               </motion.div>
             )}
           </AnimatePresence>
-
         </div>
       ))}
     </div>

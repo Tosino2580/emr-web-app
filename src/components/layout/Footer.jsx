@@ -2,7 +2,7 @@
     * @description      : 
     * @author           : fortu
     * @group            : 
-    * @created          : 18/11/2025 - 13:41:17
+    * @created          : 18/11/2025 - 13:59:50
     * 
     * MODIFICATION LOG
     * - Version         : 1.0.0
@@ -11,13 +11,12 @@
     * - Modification    : 
 **/
 /**
- * Footer — animations, parallax wave, real icons, polished spacing
+ * Footer — clickable, animated wave, improved layout
  */
 
 import Container from "../layout/Container";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
-// IMPORT CHARACTER IMAGES
 import doc1 from "../../assets/images/doc1.png";
 import doc2 from "../../assets/images/doc2.png";
 import doc3 from "../../assets/images/doc3.png";
@@ -28,36 +27,31 @@ import doc7 from "../../assets/images/doc7.png";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full bg-[#E8F7F4] border-t border-gray-300 mt-32">
+    <footer className="relative w-full bg-[#E8F7F4] border-t border-gray-300 mt-32 overflow-hidden">
 
-      {/* PARALLAX WAVE (BOTTOM) */}
-      <div
-        className="absolute -bottom-10 left-0 w-full overflow-hidden"
-        style={{ transform: "translateZ(0)" }}
-      >
-        <svg
-          className="w-full"
-          height="80"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-        >
+      {/* 🟢 ANIMATED WAVE */}
+      <div className="absolute -bottom-12 left-0 w-full pointer-events-none">
+        <svg className="w-full wave-animation" height="100" viewBox="0 0 1440 320" preserveAspectRatio="none">
           <path
             fill="#D8F1EC"
-            d="M0,288L48,272C96,256,192,224,288,208C384,192,480,192,576,192C672,192,768,192,864,202.7C960,213,1056,235,1152,224C1248,213,1344,171,1392,149.3L1440,128V320H0Z"
+            d="
+              M0,256 C180,240 260,280 360,272 
+              C480,260 520,200 640,192
+              C760,184 840,240 960,240
+              C1080,240 1180,190 1320,200
+              L1440,210 L1440,320 L0,320 Z"
           ></path>
         </svg>
       </div>
 
-      <Container className="py-12 relative z-10">
+      <Container className="py-16 relative z-10">
 
-        {/* TOP CONTENT */}
+        {/* 🔵 TOP GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
           {/* COLUMN 1 */}
           <div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Connect With Us
-            </h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Connect With Us</h3>
 
             <p className="text-gray-700 leading-relaxed">
               Nigeria,<br />
@@ -66,13 +60,19 @@ export default function Footer() {
               100001
             </p>
 
-            {/* SOCIAL ICONS */}
+            {/* SOCIALS */}
             <div className="flex space-x-4 mt-5">
               {[Instagram, Linkedin, Facebook, Twitter].map((Icon, i) => (
-                <Icon
-                  key={i}
-                  className="w-6 h-6 text-gray-700 hover:text-green-600 cursor-pointer transition-all duration-200"
-                />
+                <a key={i} href="#" className="group">
+                  <Icon
+                    className="
+                      w-6 h-6 text-gray-700 
+                      group-hover:text-green-600 
+                      transition-all duration-200
+                      group-hover:scale-110
+                    "
+                  />
+                </a>
               ))}
             </div>
           </div>
@@ -81,41 +81,51 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Company</h3>
             <ul className="space-y-2 text-gray-700">
-              <li>About Us</li>
-              <li>Careers</li>
-              <li>Contact Us</li>
-              <li>Partner With Us</li>
+              {["About Us", "Careers", "Contact Us", "Partner With Us"].map((item, i) => (
+                <li key={i}>
+                  <a
+                    href="#"
+                    className="
+                      hover:text-green-700 
+                      transition-colors 
+                      cursor-pointer
+                    "
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* COLUMN 3 */}
           <div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Contact</h3>
+
             <ul className="space-y-2 text-gray-700">
-              <li>+91 9360952112</li>
-              <li>sales@ndoc.com</li>
-              <li>support@ndoc.com</li>
+              <li><a href="tel:+919360952112" className="hover:text-green-700">+91 9360952112</a></li>
+              <li><a href="mailto:sales@ndoc.com" className="hover:text-green-700">sales@ndoc.com</a></li>
+              <li><a href="mailto:support@ndoc.com" className="hover:text-green-700">support@ndoc.com</a></li>
             </ul>
           </div>
+
         </div>
 
-        {/* CHARACTER IMAGES ROW */}
-        <div className="w-full mt-14 overflow-hidden">
+        {/* 🔵 CHARACTER IMAGES */}
+        <div className="w-full mt-14">
           <div className="flex items-end justify-between gap-8 py-6">
-
             {[doc1, doc2, doc3, doc4, doc5, doc6, doc7].map((img, i) => (
               <img
                 key={i}
                 src={img}
                 className="
-                  h-[90px] rounded-xl object-contain 
+                  h-[80px] rounded-xl object-contain 
                   transition-all duration-300 
                   hover:scale-110 hover:-translate-y-2 hover:shadow-xl
                 "
                 alt=""
               />
             ))}
-
           </div>
         </div>
 
