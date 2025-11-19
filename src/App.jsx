@@ -12,7 +12,10 @@
 **/
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Company/Home";
-import Lms from "./components/LabMedService/Lms";
+// import Lms from "./components/LabMedService/Lms";
+import UserLogin from "./components/Login/userLogin";
+import UserRegistration from "./components/Login/UserRegistration";
+import PatientRegistration from "./components/Login/PatientRegistration";
 
 function App() {
   return (
@@ -20,7 +23,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/lab-med-service" element={<Lms />} /> 
+          {/* <Route path="/lab-med-service" element={<Lms />} />  */}
+          <Route path="/user-login" element={<UserLogin/>} /> 
+          <Route path="/user-registration" element={<UserRegistration />} /> 
+          <Route path="/patient-registration" element={<PatientRegistration/>} /> 
+
         </Routes>
       </Router>
     </>
