@@ -22,8 +22,10 @@ import LoginMenu from "../ui/LoginMenu";
 import Container from "./Container";
 import { menus } from "../data/menus";
 import { Menu, X, ChevronDown } from "lucide-react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import logo from "../../assets/images/logo.jpg";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -61,11 +63,13 @@ export default function Navbar() {
       <Container className="py-4 flex items-center justify-between">
 
         {/* LOGO */}
-        <img 
-          src={logo}
-          alt="Logo"
-          className="h-10 select-none"
-        />
+        <Link to="/">
+          <img 
+            src={logo}
+            alt="Logo"
+            className="h-10 select-none"
+          />
+        </Link>
 
         {/* CENTER NAV */}
         <div className="hidden md:flex flex-1 justify-center">
