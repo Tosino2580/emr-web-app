@@ -33,11 +33,12 @@ export default function LoginMenu({ openLogin }) {
               <span className="text-sm font-semibold">User Login</span>
             </div>
             </Link>
-
+            <Link to={"/patient-login"}>
             <div className="flex items-center px-4 py-2 space-x-3 cursor-pointer hover:bg-gray-50 hover:text-[#009688] transition-all">
               <User className="h-5 w-5" strokeWidth={2.6} />
               <span className="text-sm font-semibold">Patient Login</span>
             </div>
+            </Link>
           </div>
         </motion.div>
       )}

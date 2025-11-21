@@ -16,6 +16,7 @@ import Home from "./Company/Home";
 import UserLogin from "./components/Login/userLogin";
 import UserRegistration from "./components/Login/UserRegistration";
 import PatientRegistration from "./components/Login/PatientRegistration";
+import PatientLogin from "./components/Login/patientLogin";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
           <Route path="/user-login" element={<UserLogin/>} /> 
           <Route path="/user-registration" element={<UserRegistration />} /> 
           <Route path="/patient-registration" element={<PatientRegistration/>} /> 
-
+          <Route path="/patient-login" element={<PatientLogin/>} /> 
+          
         </Routes>
       </Router>
     </>
